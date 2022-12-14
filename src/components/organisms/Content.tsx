@@ -1,14 +1,16 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import { useGlobalContext } from "../../contexts/GlobalContext";
-import MenuPage from "../../pages/MenuPage";
+import AfficheCompetPage from "../../pages/AfficheCompetPage";
+import AfficheMatchPage from "../../pages/AfficheMatchPage";
+import HomePage from "../../pages/HomePage";
 
 const Content = () => {
-  const { incrementCount } = useGlobalContext();
   return (
     <Routes>
-      <Route path="" element={<MenuPage incrementCount={incrementCount} />} />
-      <Route path="panier" element={<div>Mon panier</div>} />
+      <Route path="" element={<HomePage/>} />
+      <Route path="competition" element={<AfficheCompetPage/>} />
+      <Route path="match" element={<AfficheMatchPage />} />
+      <Route path="team" element={<div>Les Equipes</div>} />
     </Routes>
   );
 };

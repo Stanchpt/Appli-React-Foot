@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import { useGlobalContext } from "../../contexts/GlobalContext";
 
 const Header = () => {
   return (
