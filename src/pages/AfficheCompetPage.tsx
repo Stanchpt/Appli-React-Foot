@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import AfficheCompet from "../components/molecules/afficheCompet";
+import styled from "styled-components";
 
 function AfficheCompetPage() {
   const [error, setError] = useState(null);
@@ -24,23 +26,42 @@ function AfficheCompetPage() {
   }, [])
 
   return (   
-    //Remplissage du composant afficheMatch avec les données récupèrées via l'api
-    <div className ="container">
-      <div className="AfficheCompet">
-          {compet.map((item) => (
-            // <AfficheMatch key={item.id} {...item} />
-            <AfficheCompet 
-              key={item.id}
-              url_image={item.url_image}
-              url_info={item.url_info}
-              nom={item.nom}
-              annee={item.Annee}
-              nb_equipe={item.nb_equipe}
-              region = {item.region}/>
-          ))}
+      //Remplissage du composant afficheMatch avec les données récupèrées via l'api
+      <Container>
+      <div className ="container">
+        <div className="btn_aj_compet">
+          <Link to={"/AjoutCompet"}> + Ajout une nouvelle competition</Link> 
+        </div>   
+        <div className="AfficheCompet">
+            {compet.map((item) => (
+              // <AfficheMatch key={item.id} {...item} />
+              <AfficheCompet 
+                key={item.id}
+                url_image={item.url_image}
+                url_info={item.url_info}
+                nom={item.nom}
+                annee={item.Annee}
+                nb_equipe={item.nb_equipe}
+                region = {item.region}/>
+            ))}
+        </div>
       </div>
-    </div>
+    </Container>
   );
 };
 
 export default AfficheCompetPage;
+
+const Container = styled.div`
+.btn_aj_compet{
+  text-align:center;
+  padding :15px;
+}
+.btn_aj_compet a{
+  border-bottom : solid 2px black;
+}
+a{
+  text-decoration :none;
+  font-size : 18px;
+}
+`;
