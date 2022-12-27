@@ -24,6 +24,9 @@ const Header = () => {
           <li>
             <Link to={"/team"}>Equipes</Link>
           </li>
+          <li>
+            <Link to={"/player"}>Joueurs</Link>
+          </li>
         </ul>
       </nav>
     </Container>

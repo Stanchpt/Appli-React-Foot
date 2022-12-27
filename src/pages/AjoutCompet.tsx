@@ -19,8 +19,11 @@ function AjoutCompet() {
             const resp = await axios.post(url, {nom : nom, Annee : Annee, nb_equipe: nb_equipe,
             region : region, url_info:url_info, url_image:url_image });
             console.log(resp.data);
+            console.log("Votre match a été ajouté");
+            alert("Votre match a été ajouté");
         }catch(error){
             console.log("La requête n'a pas été effectué");
+            alert(error);
         }
     }
 
@@ -32,7 +35,7 @@ function AjoutCompet() {
             <Container>
                 <div className='form_compet'>
                     <form className="Form" onSubmit={handleSubmit}>
-                        <u><h5>Formulaire d'Ajout : </h5></u>
+                        <u><h5>Formulaire d'Ajout de competition : </h5></u>
                         <div className="mb-3 mt-3">
                             <label htmlFor="nom_compet" className="form-label">Nom de la competition :</label>
                             <input type="text" className="form-control" id="nom_compet" placeholder="Enter le nom de la competition" 

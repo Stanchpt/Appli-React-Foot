@@ -1,7 +1,9 @@
 import { render } from "@testing-library/react";
 import axios from "axios";
+import { write } from "fs";
 import React, { useRef, useState } from "react";
 import styled from "styled-components";
+
 function AjoutMatch() {
     const url= "http://localhost:3000/matchs/"
 
@@ -21,11 +23,13 @@ function AjoutMatch() {
             competition:competition, stade_competition:stade_competition,
             date:date, heure: heure, img_match:img_match});
             console.log(resp.data);
+            console.log("Votre match a été ajouté");
+            alert("Votre match a été ajouté");
         }catch(error){
             console.log("La requête n'a pas été effectué");
+            alert(error);
         }
     }
-
 
     return (   
         //Remplissage du composant afficheMatch avec les données récupèrées via l'api
@@ -34,7 +38,7 @@ function AjoutMatch() {
             <Container>
                 <div className='form_match'>
                     <form className="Form" onSubmit={handleSubmit}>
-                        <u><h5>Formulaire d'Ajout : </h5></u>
+                        <u><h5>Formulaire d'Ajout d'un nouveau Match de foot : </h5></u>
                         <div className="mb-3 mt-3">
                             <label htmlFor="adv1" className="form-label">Adversaire 1 :</label>
                             <input type="text" className="form-control" id="adv1" placeholder="Enter l'Adversaire 1" 
