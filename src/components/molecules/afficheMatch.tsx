@@ -7,16 +7,17 @@ interface AffichematchProps {
   stade_competition : string;
   datematch: string;
   heure : number;
+  img_match :string;
 }
 
-const AfficheMatch = ({adv1, adv2,competition, stade_competition, datematch, heure }: AffichematchProps) => {
+const AfficheMatch = ({adv1, adv2,competition, stade_competition, datematch, heure, img_match }: AffichematchProps) => {
   return (
     <Container>
       <div className="container justify-content-center">
       <p className="card-text">{competition}</p>
       <p className="card-text">{stade_competition}</p>
         <div className="card">
-          <img src="https://www.stakecheia.com/wp-content/uploads/2022/11/Copa-do-Mundo-1.jpg" className="card-img-top" alt="Img-Default"/>
+          <img src={img_match} className="card-img-top" alt="Img-Default"/>
           <div className="card-body">
             <h5 className="card-title">{adv1} - {adv2}</h5>
             <div className="date-heure">

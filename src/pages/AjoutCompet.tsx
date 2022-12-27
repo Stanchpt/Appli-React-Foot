@@ -15,6 +15,13 @@ function AjoutCompet() {
     const handleSubmit = async(e: { preventDefault: () => void; }) =>{
         e.preventDefault();
         console.log(nom, Annee, nb_equipe, region, url_info, url_image)
+        try{
+            const resp = await axios.post(url, {nom : nom, Annee : Annee, nb_equipe: nb_equipe,
+            region : region, url_info:url_info, url_image:url_image });
+            console.log(resp.data);
+        }catch(error){
+            console.log("La requête n'a pas été effectué");
+        }
     }
 
 
