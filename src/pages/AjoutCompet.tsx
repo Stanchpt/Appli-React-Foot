@@ -2,34 +2,37 @@ import { render } from "@testing-library/react";
 import axios from "axios";
 import React, { useRef, useState } from "react";
 import styled from "styled-components";
+
 function AjoutCompet() {
     const url= "http://localhost:3000/competition"
 
     const [nom, SetNom] = useState('')
     const [Annee, SetAnnee] = useState('')
     const [nb_equipe, SetNbEquipe] = useState('')
+    const [type, SetType] = useState('')
     const [region, SetRegion] = useState('')
     const [url_info, SetUrlInfo] = useState('')
     const [url_image, SetUrlImage] = useState('')
 
     const handleSubmit = async(e: { preventDefault: () => void; }) =>{
         e.preventDefault();
-        console.log(nom, Annee, nb_equipe, region, url_info, url_image)
+        console.log(nom, Annee, nb_equipe, type,region, url_info, url_image)
         try{
-            const resp = await axios.post(url, {nom : nom, Annee : Annee, nb_equipe: nb_equipe,
+            const resp = await axios.post(url, {nom : nom, Annee : Annee, nb_equipe: nb_equipe, type : type,
             region : region, url_info:url_info, url_image:url_image });
             console.log(resp.data);
             console.log("Votre match a été ajouté");
             alert("Votre match a été ajouté");
+            window.location.reload();
         }catch(error){
             console.log("La requête n'a pas été effectué");
             alert(error);
+            window.location.reload();
         }
     }
 
 
     return (   
-        //Remplissage du composant afficheMatch avec les données récupèrées via l'api
         <div className ="container">
           <div className="AjoutCompet">
             <Container>
@@ -50,6 +53,15 @@ function AjoutCompet() {
                             <label htmlFor="nb_equipe" className="form-label">Enter le nombre d'equipe :</label>
                             <input type="number" className="form-control" id="nb_equipe" placeholder="Enter le nombre d'equipe" 
                             name="nb_equipe" value ={nb_equipe} onChange={(e)=>SetNbEquipe(e.target.value)}/>
+                        </div>
+                        <div className="mb-3 mt-3">
+                            <label htmlFor="type_compet" className="form-label">Enter le type de la competition :</label>
+                            {/* <input type="text" className="form-control" id="region_compet" placeholder="Enter la region de la competition" name="region_compet"/> */}
+                            <select className="form-select mt-3" value ={type} onChange={(e)=>SetRegion(e.target.value)} >
+                                <option selected>--Choisissez un type de competition--</option>
+                                <option value="Internationale">Internationale</option>
+                                <option value="Nationale">Nationale</option>
+                            </select>
                         </div>
                         <div className="mb-3 mt-3">
                             <label htmlFor="region_compet" className="form-label">Enter la region de la competition :</label>

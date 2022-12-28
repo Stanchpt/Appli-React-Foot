@@ -25,9 +25,11 @@ function AjoutMatch() {
             console.log(resp.data);
             console.log("Votre match a été ajouté");
             alert("Votre match a été ajouté");
+            window.location.reload();
         }catch(error){
             console.log("La requête n'a pas été effectué");
             alert(error);
+            window.location.reload();
         }
     }
 

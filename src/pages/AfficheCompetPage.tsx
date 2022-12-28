@@ -42,7 +42,8 @@ function AfficheCompetPage() {
                 nom={item.nom}
                 annee={item.Annee}
                 nb_equipe={item.nb_equipe}
-                region = {item.region}/>
+                region = {item.region}
+                type = {item.type}/>
             ))}
         </div>
       </div>
