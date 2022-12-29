@@ -33,17 +33,16 @@ function AfficheCompetPage() {
           <thead>
               <tr>
                 <td>id</td>
-                <td>Prenom</td>
                 <td>Nom</td>
+                <td>Prenom</td>
                 <td>Age</td>
                 <td>Club</td>
-                <td>Equipe</td>
-                <td></td>
-                <td></td>
+                <td>Equipe Nationale</td>
+                <td colSpan={2} id="bgcolor"></td>
               </tr>
             </thead>
             <tr>
-              <td colSpan={7} id="lien-ajout">
+              <td colSpan={8} id="lien-ajout">
                 <div className="btn_aj_player">
                   <Link to={"/AjoutPlayer"}> + Ajout un nouveau player </Link> 
                 </div>
@@ -58,7 +57,8 @@ function AfficheCompetPage() {
                   nom={item.nom}
                   prenom={item.prenom}
                   age={item.age}
-                  equipe={item.equipe}/>
+                  club={item.club}
+                  equipe_nationale={item.equipe_nationale}/>
               ))}
             </tbody>
           </table>
@@ -85,5 +85,8 @@ a{
 }
 #lien-ajout{
   background-color : #6d071a;
+}
+#bgcolor{
+  background-color : black;
 }
 `;

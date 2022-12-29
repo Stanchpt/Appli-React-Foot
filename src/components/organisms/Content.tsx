@@ -10,6 +10,7 @@ import AjoutPlayer from "../../pages/AjoutPlayer";
 import AjoutClub from "../../pages/AjoutClub";
 import AjoutEquipe_nationale from "../../pages/AjoutEquipe_nationale";
 import HomePage from "../../pages/HomePage";
+import PlayerEditPage from "../../pages/updatePlayerPage";
 
 const Content = () => {
   return (
@@ -24,6 +25,7 @@ const Content = () => {
       <Route path="AjoutPlayer" element={<AjoutPlayer/>}/>
       <Route path="AjoutClub" element={<AjoutClub/>}/>
       <Route path="AjoutNationale" element={<AjoutEquipe_nationale/>}/>
+      <Route path="/Updateplayer/:id" element={<PlayerEditPage/>}/>
     </Routes>
   );
 };

@@ -57,7 +57,7 @@ function AjoutCompet() {
                         <div className="mb-3 mt-3">
                             <label htmlFor="type_compet" className="form-label">Enter le type de la competition :</label>
                             {/* <input type="text" className="form-control" id="region_compet" placeholder="Enter la region de la competition" name="region_compet"/> */}
-                            <select className="form-select mt-3" value ={type} onChange={(e)=>SetRegion(e.target.value)} >
+                            <select className="form-select mt-3" value ={type} onChange={(e)=>SetType(e.target.value)} >
                                 <option selected>--Choisissez un type de competition--</option>
                                 <option value="Internationale">Internationale</option>
                                 <option value="Nationale">Nationale</option>
