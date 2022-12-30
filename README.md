@@ -18,8 +18,10 @@
 
 
 ### `Attention !!!` 
-    Normalement si vous utilisez Visual Studio Code, celui-ci vous demandera de changer le port accueillant l'application car celle-ci utilise de base le port 3000. Et normalement, si vous avez d'abord lancer l'api
-    Celle-ci utilise déjà le port 3000. Alors VS code le changera pour le port 3001.
-    
+    Normalement si vous utilisez Visual Studio Code, celui-ci vous demandera de changer le port 
+    accueillant l'application car celle-ci utilise de base le port 3000. Et normalement,
+    si vous avez d'abord lancer l'api .Celle-ci utilise déjà le port 3000. 
+    Alors VS code le changera pour le port 3001.
+
 Une fois ceci fait
 ### Bienvenue sur l'application de FOOT
