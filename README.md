@@ -5,8 +5,8 @@
 
 # Comment cloner cette application ReactJS sur votre machine
     Faites un clique droit dans vos documents puis selectionner `git bash here` 
-    Copier/Coller ce lien (https://github.com/Stanchpt/API-rest-Foot.git) sur l'invite de commande précéder de git clone.
-    Ce qui donnerait "git clone https://github.com/Stanchpt/API-rest-Foot.git" 
+    Copier/Coller ce lien (https://github.com/Stanchpt/Appli-React-Foot.git) sur l'invite de commande précéder de git clone.
+    Ce qui donnerait "git clone https://github.com/Stanchpt/Appli-React-Foot.git" 
 
 # Comment l'initier sur votre machine
     Ouvrer le dossier sur un editeur de code (ex : Visual studio code)
