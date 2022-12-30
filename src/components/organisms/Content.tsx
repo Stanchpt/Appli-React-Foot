@@ -4,13 +4,13 @@ import AfficheCompetPage from "../../pages/AfficheCompetPage";
 import AfficheMatchPage from "../../pages/AfficheMatchPage";
 import AffichePlayerPage from "../../pages/AffichePlayerPage";
 import AfficheTeamPage from "../../pages/AfficheTeamPage";
-import AjoutCompet from "../../pages/AjoutCompet";
-import AjoutMatch from "../../pages/AjoutMatch";
-import AjoutPlayer from "../../pages/AjoutPlayer";
-import AjoutClub from "../../pages/AjoutClub";
-import AjoutEquipe_nationale from "../../pages/AjoutEquipe_nationale";
 import HomePage from "../../pages/HomePage";
-import PlayerEditPage from "../../pages/updatePlayerPage";
+import PlayerEditPage from "../../pages/UpdatePlayerPage";
+import AjoutClub from "../molecules/AjoutClub";
+import AjoutCompet from "../molecules/AjoutCompet";
+import AjoutEquipe_nationale from "../molecules/AjoutEquipe_nationale";
+import AjoutMatch from "../molecules/AjoutMatch";
+import AjoutPlayer from "../molecules/AjoutPlayer";
 
 const Content = () => {
   return (

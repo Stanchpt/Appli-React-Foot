@@ -1,6 +1,4 @@
-import { render } from "@testing-library/react";
 import axios from "axios";
-import { write } from "fs";
 import React, { useRef, useState } from "react";
 import styled from "styled-components";
 

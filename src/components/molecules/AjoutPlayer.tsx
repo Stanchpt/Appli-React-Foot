@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, {useState } from "react";
 import styled from "styled-components";
-import SelectTeam from "../components/atoms/select-team";
+import SelectTeam from "../atoms/select-team";
 
 function AjoutPlayer() {
     const url= "http://localhost:3000/players/"
