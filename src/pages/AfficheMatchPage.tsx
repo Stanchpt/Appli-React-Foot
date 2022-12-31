@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import ErrorApi from "../components/atoms/error-API";
 import AfficheMatch from "../components/molecules/afficheMatch";
 
 function AfficheMatchPage() {
@@ -24,31 +25,41 @@ function AfficheMatchPage() {
         }
       )
   }, [])
-
-  return (   
-    //Remplissage du composant afficheMatch avec les données récupèrées via l'api
-    <Container>
-      <div className ="container">
-          <div className="btn_aj_match">
-            <Link to={"/AjoutMatch"}> + Ajout un nouveau match</Link> 
-          </div> 
-        <div className="AfficheMatch">
-            {matchs.map((item) => (
-              // <AfficheMatch key={item.id} {...item} />
-              <AfficheMatch
-                key={item.id}
-                adv1={item.Adv1}
-                adv2={item.Adv2}
-                competition={item.competition}
-                stade_competition={item.stade_competition}
-                heure={item.heure} 
-                datematch={item.date}
-                img_match = {item.img_match}/>
-            ))}
+console.log(matchs)
+  if(matchs.length != 0){
+    return (   
+      //Remplissage du composant afficheMatch avec les données récupèrées via l'api
+      <Container>
+        <div className ="container">
+            <div className="btn_aj_match">
+              <Link to={"/AjoutMatch"}> + Ajout un nouveau match</Link> 
+            </div> 
+          <div className="AfficheMatch">
+              {matchs.map((item) => (
+                // <AfficheMatch key={item.id} {...item} />
+                <AfficheMatch
+                  key={item.id}
+                  adv1={item.Adv1}
+                  adv2={item.Adv2}
+                  competition={item.competition}
+                  stade_competition={item.stade_competition}
+                  heure={item.heure} 
+                  datematch={item.date}
+                  img_match = {item.img_match}/>
+              ))}
+          </div>
         </div>
+      </Container>
+    );
+  }
+  else {
+    return (
+      <div className="container">
+      <ErrorApi />
       </div>
-    </Container>
-  );
+    );
+  }
+
 };
 
 export default AfficheMatchPage;

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import ErrorApi from "../components/atoms/error-API";
 import AffichePlayer from "../components/molecules/affichePlayer";
 
 function AfficheCompetPage() {
@@ -24,48 +25,59 @@ function AfficheCompetPage() {
         }
       )
   }, [])
-  return (   
-      //Remplissage du composant afficheMatch avec les données récupèrées via l'api
-      <Container>
-      <div className ="container">
-        <div className="AfficheCompet">
-        <table className="table table-bordered table-striped">
-          <thead>
-              <tr>
-                <td>id</td>
-                <td>Nom</td>
-                <td>Prenom</td>
-                <td>Age</td>
-                <td>Club</td>
-                <td>Equipe Nationale</td>
-                <td colSpan={2} id="bgcolor"></td>
-              </tr>
-            </thead>
-            <tr>
-              <td colSpan={8} id="lien-ajout">
-                <div className="btn_aj_player">
-                  <Link to={"/AjoutPlayer"}> + Ajout un nouveau player </Link> 
-                </div>
-              </td>  
-            </tr> 
-            <tbody>
-              {player.map((item) => (
-                // <AfficheMatch key={item.id} {...item} />
-                <AffichePlayer 
-                  key={item.id}
-                  id= {item.id}
-                  nom={item.nom}
-                  prenom={item.prenom}
-                  age={item.age}
-                  club={item.club}
-                  equipe_nationale={item.equipe_nationale}/>
-              ))}
-            </tbody>
-          </table>
-        </div>
+  console.log(player)
+  if(player.length != 0)
+  {
+      return (   
+          //Remplissage du composant afficheMatch avec les données récupèrées via l'api
+          <Container>
+          <div className ="container">
+            <div className="AfficheCompet">
+            <table className="table table-bordered table-striped">
+              <thead>
+                  <tr>
+                    <td>id</td>
+                    <td>Nom</td>
+                    <td>Prenom</td>
+                    <td>Age</td>
+                    <td>Club</td>
+                    <td>Equipe Nationale</td>
+                    <td colSpan={2} id="bgcolor"></td>
+                  </tr>
+                </thead>
+                <tr>
+                  <td colSpan={8} id="lien-ajout">
+                    <div className="btn_aj_player">
+                      <Link to={"/AjoutPlayer"}> + Ajout un nouveau player </Link> 
+                    </div>
+                  </td>  
+                </tr> 
+                <tbody>
+                  {player.map((item) => (
+                    // <AfficheMatch key={item.id} {...item} />
+                    <AffichePlayer 
+                      key={item.id}
+                      id= {item.id}
+                      nom={item.nom}
+                      prenom={item.prenom}
+                      age={item.age}
+                      club={item.club}
+                      equipe_nationale={item.equipe_nationale}/>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </Container>
+      );
+  }
+  else {
+    return (
+      <div className="container">
+      <ErrorApi />
       </div>
-    </Container>
-  );
+    );
+  }
 };
 
 export default AfficheCompetPage;
